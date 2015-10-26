@@ -57,10 +57,35 @@ angular.module('tinderCards.directives', [])
         active = false;
       }
 
-
       mc.on("hammer.input", function(ev) {
   	    if(ev.isFinal) {
-	        resetElement();
+          if (textYes.style.opacity == 1) {
+            //offscreen
+            element.className = 'card tinder-card animate';
+            transform.translate = {
+                x: (ev.deltaX * 3),
+                y: (ev.deltaY * 3)
+            };
+            requestElementUpdate();
+            window.setTimeout(function(){
+              element.parentNode.removeChild(element);
+              scope.destroyCard(attrs.index, true);
+            }, 500);
+          } else if (textNo.style.opacity == 1) {
+            //offscreen
+            element.className = 'card tinder-card animate';
+            transform.translate = {
+                x: (ev.deltaX * 3),
+                y: (ev.deltaY * 3)
+            };
+            requestElementUpdate();
+            window.setTimeout(function(){
+              element.parentNode.removeChild(element);
+              scope.destroyCard(attrs.index, false);
+            }, 500);
+          } else {
+            resetElement();
+          }
   	    }
     	});
 
@@ -72,13 +97,13 @@ angular.module('tinderCards.directives', [])
   	    };
 
         // change opacity of the LIKE / NOPE text
-        var opacityMultiplier = Math.abs(ev.deltaX) / (element.offsetWidth / 2);
+        var newOpacity = Math.min(Math.max(Math.abs(ev.deltaX) / (element.offsetWidth / 1.5), 0), 1);
         if(ev.deltaX > 0) {
-          textYes.style.opacity = 1 * opacityMultiplier;
+          textYes.style.opacity = newOpacity;
           textNo.style.opacity = 0;
         } else if (ev.deltaX <= 0) {
           textYes.style.opacity = 0;
-          textNo.style.opacity = 1 * opacityMultiplier;
+          textNo.style.opacity = newOpacity;
         }
 
   	    requestElementUpdate();

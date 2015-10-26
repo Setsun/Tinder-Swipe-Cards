@@ -15,7 +15,7 @@
   <script type="text/javascript" src="js/app.js"></script>
 </head>
 <body ng-app="tinderCards">
-  <div class="cards-container" ng-controller="MainCtrl">
+  <div class="cards-container" ng-controller="CardCtrl">
     <div class="card tinder-card" ng-repeat="card in cards" data-index="{{$index}}">
       <div class="card-image">
         <span class="card-image-yes">LIKE</span>
@@ -37,6 +37,9 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="match-screen" ng-controller="MatchCtrl">
   </div>
 </body>
 </html>
