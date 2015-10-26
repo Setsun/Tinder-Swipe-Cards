@@ -8,9 +8,31 @@
 
   <!--app files-->
   <link rel="stylesheet" href="css/main.css" />
+  <script type="text/javascript" src="js/controllers.js"></script>
+  <script type="text/javascript" src="js/services.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
 </head>
-<body>
-  <h1>Hello World!</h1>
+<body ng-app="tinderCards">
+  <div ng-controller="MainCtrl">
+    <div class="card" ng-repeat="card in cards">
+      <div class="card-image">
+        <img ng-src="{{card.image}}">
+      </div>
+      <div class="card-info">
+        <div class="float-left">
+          <span class="info-name">{{card.name}},</span>&nbsp;
+          <span class="info-age">{{card.age}}</span>
+        </div>
+        <div class="float-right">
+          <span ng-class="{'text-active': (card.common.friends > 0), 'text-inactive': (card.common.friends <= 0)}">
+            <i class="fa fa-users"></i> {{card.common.friends}}
+          </span>&nbsp;
+          <span ng-class="{'text-active': (card.common.interests > 0), 'text-inactive': (card.common.interests <= 0)}">
+            <i class="fa fa-book"></i> {{card.common.interests}}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

@@ -18,11 +18,9 @@ gulp.task('lib-js', function(){
   return gulp.src(
       ['node_modules/angular/angular.js'],
       {base : 'node_modules/'})
-    .pipe(concat('lib.js'))
-    .pipe(gulp.dest('public/lib'))
-    .pipe(rename('lib.min.js'))
+    .pipe(concat('lib.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('public/lib'));
+    .pipe(gulp.dest('public/lib'))
 });
 
 gulp.task('lib-css', function(){
@@ -30,11 +28,9 @@ gulp.task('lib-css', function(){
       ['node_modules/font-awesome/css/font-awesome.css',
        'node_modules/normalize.css/normalize.css'],
       {base: 'node_modules/'})
-    .pipe(concat('lib.css'))
-    .pipe(gulp.dest('public/lib'))
-    .pipe(rename('lib.min.css'))
+    .pipe(concat('lib.min.css'))
     .pipe(minify())
-    .pipe(gulp.dest('public/lib'));
+    .pipe(gulp.dest('public/lib'))
 });
 
 gulp.task('default', ['move', 'lib-js', 'lib-css']);

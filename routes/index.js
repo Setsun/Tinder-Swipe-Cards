@@ -8,18 +8,18 @@ router.get('/', function(req, res, next) {
 router.get('/cards', function(req, res, next) {
   var cards = [
     {
-      name: 'Kyle',
+      name: 'Obama',
       age: 22,
-      imgSrc: '',
+      image: 'img/obama.png',
       common: {
         friends: 0,
         interests: 1
       }
     },
     {
-      name: 'Kristen',
+      name: 'JavaScript',
       age: 28,
-      imgSrc: '',
+      image: 'img/javascript.png',
       common: {
         friends: 2,
         interests: 0
@@ -28,7 +28,7 @@ router.get('/cards', function(req, res, next) {
     {
       name: 'Cat',
       age: 98,
-      imgSrc: '',
+      image: 'img/doge.png',
       common: {
         friends: 57,
         interests: 73

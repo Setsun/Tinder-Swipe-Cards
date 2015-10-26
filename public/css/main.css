@@ -1,0 +1,35 @@
+/*Utility classes*/
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.text-active {
+  color: #d94b3f;
+}
+
+.text-inactive {
+  color: #d3d3d3;
+}
+
+/*Card styles*/
+.card {
+  overflow: hidden;
+  width: 512px;
+  border: 1px solid #d3d3d3;
+  border-radius: 15px;
+}
+.card-info:after,
+.card-info:before {
+  content: " ";
+  clear: both;
+  display: block;
+}
+.card-info {
+  padding: 20px;
+  font-size: 1.2em;
+}
+.card-info .info-name {
+  font-weight: bold;
+}
