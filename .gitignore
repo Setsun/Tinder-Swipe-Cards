@@ -1,0 +1,18 @@
+# --------------------
+# Node Files
+# --------------------
+.nodemonignore
+npm-debug.log
+node_modules/
+
+
+# --------------------
+# Build files
+# --------------------
+public/lib
+public/fonts
+
+# --------------------
+# Misc
+# --------------------
+Thumbs.db
