@@ -15,10 +15,12 @@
 <body ng-app="tinderCards">
   <div ng-controller="MainCtrl">
     <div class="card" ng-repeat="card in cards">
-      <div class="card-image">
+      <div class="card-image clearfix">
+        <span class="card-yes">LIKE</span>
+        <span class="card-no">NOPE</span>
         <img ng-src="{{card.image}}">
       </div>
-      <div class="card-info">
+      <div class="card-info clearfix">
         <div class="float-left">
           <span class="info-name">{{card.name}},</span>&nbsp;
           <span class="info-age">{{card.age}}</span>
