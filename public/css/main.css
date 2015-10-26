@@ -14,45 +14,65 @@
 .text-active {
   color: #d94b3f;
 }
-
 .text-inactive {
   color: #d3d3d3;
 }
+img {
+ pointer-events: none;
+}
 
 /*Card styles*/
+.cards-container {
+  position: relative;
+  width: 100%;
+}
+
 .card {
   overflow: hidden;
-  position: relative;
+  position: absolute;
+  left:0;
+  right:0;
+  top: 50px; /*figure out vertical align later*/
+  margin: 0 auto;
   width: 512px;
   border: 1px solid #d3d3d3;
   border-radius: 15px;
 }
-.card-yes,
-.card-no {
+.card.animate {
+  transition: all .3s;
+}
+.card-image {
+  position: relative;
+}
+.card-image-yes,
+.card-image-no {
   z-index: 99;
   position: absolute;
   top: 50px;
-  width: 75px;
+  width: 100px;
   padding: 5px;
   border: 5px solid;
-  font-size: 1.5em;
+  border-radius: 10px;
+  font-size: 2em;
   letter-spacing: 2px;
   text-align: center;
   font-weight: bold;
+  opacity: 0;
 }
-.card-yes {
-  left: 25px;
+.card-image-yes {
+  left: 30px;
   color: green;
   border-color: green;
   transform: rotate(-30deg);
 }
-.card-no {
-  left: calc(512px - 90px - 25px);
+.card-image-no {
+  left: calc(512px - 115px - 30px);
   color: red;
   border-color: red;
   transform: rotate(30deg);
 }
 .card-info {
+  background-color: #fff;
   padding: 20px;
   font-size: 1.2em;
 }

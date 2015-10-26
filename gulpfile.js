@@ -16,7 +16,8 @@ gulp.task('move', function(){
 
 gulp.task('lib-js', function(){
   return gulp.src(
-      ['node_modules/angular/angular.js'],
+      ['node_modules/angular/angular.js',
+       'node_modules/hammerjs/hammer.js'],
       {base : 'node_modules/'})
     .pipe(concat('lib.min.js'))
     .pipe(uglify())

@@ -10,7 +10,7 @@ router.get('/cards', function(req, res, next) {
     {
       name: 'Obama',
       age: 22,
-      image: 'img/obama.png',
+      image: 'img/obama.jpg',
       common: {
         friends: 0,
         interests: 1
@@ -26,12 +26,21 @@ router.get('/cards', function(req, res, next) {
       }
     },
     {
-      name: 'Cat',
-      age: 98,
-      image: 'img/doge.png',
+      name: 'Jesse',
+      age: 53,
+      image: 'img/michael.jpg',
       common: {
-        friends: 57,
-        interests: 73
+        friends: 0,
+        interests: 0
+      }
+    },
+    {
+      name: 'Kitty',
+      age: 102,
+      image: 'img/doge.jpg',
+      common: {
+        friends: 42,
+        interests: 1
       }
     }
   ];
