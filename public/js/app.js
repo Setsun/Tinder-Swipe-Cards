@@ -1,1 +1,1 @@
-var app = angular.module('tinderCards', ['tinderCards.controllers', 'tinderCards.directives']);
+var app = angular.module('tinder', ['tinder.controllers', 'tinder.directives']);

@@ -1,4 +1,14 @@
-/*Utility classes*/
+/*Utility styles*/
+body, html {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  user-select: none;
+}
+img {
+  pointer-events: none;
+  width: 100%;
+  height: auto;
+}
 .float-left {
   float: left;
 }
@@ -17,22 +27,18 @@
 .text-inactive {
   color: #d3d3d3;
 }
-img {
- pointer-events: none;
-}
 
 /*Card styles*/
 .cards-container {
   position: relative;
   width: 100%;
 }
-
 .card {
   overflow: hidden;
   position: absolute;
   left:0;
   right:0;
-  top: 50px; /*figure out vertical align later*/
+  top: 50px;
   margin: 0 auto;
   width: 512px;
   border: 1px solid #d3d3d3;
@@ -78,4 +84,81 @@ img {
 }
 .card-info .info-name {
   font-weight: bold;
+}
+
+/*Match screen styles*/
+#match-fancy-text-img {
+  max-width: 512px;
+}
+.match-screen {
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  font-size: 2em;
+  height: 100vh;
+  width: 100%;
+  color: #fff;
+  background-color: rgba(0,0,0,0.8);
+  transition: all 1s;
+}
+.match-images {
+  width: 75%;
+  margin: 0 auto;
+}
+.match-images img {
+  display: inline;
+  width: 35%;
+  margin: 5%;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.match-return-btn {
+  border: 1px solid #fff;
+  border-radius: 5px;
+  margin-top: 5%;
+  padding: 3% 9%;
+  color: #fff;
+  background-color: transparent;
+  transition: all .3s;
+}
+.match-return-btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/*Reset button*/
+.reset-btn {
+  z-index: 1;
+  position: absolute;
+  left:0;
+  right:0;
+  top: 100px;
+  margin: 0 auto;
+  padding: 3% 9%;
+  width: 256px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #000;
+  transition: all .3s;
+}
+.reset-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/*Responsiveness*/
+@media (max-width: 400px) {
+  .card {
+    width: 300px;
+  }
+  .card-image-no {
+    left: calc(300px - 115px - 30px);
+  }
+  .card-info {
+    font-size: 1em;
+  }
+  .match-screen {
+    font-size: 1.2em;
+  }
 }

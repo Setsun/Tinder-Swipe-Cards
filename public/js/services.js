@@ -1,4 +1,4 @@
-angular.module('tinderCards.services', [])
+angular.module('tinder.services', [])
 
 .factory('Cards', function($http){
   return {
