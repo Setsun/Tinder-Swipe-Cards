@@ -40,7 +40,10 @@ angular.module('tinder.directives', [])
           textYes.style.opacity = 0;
           textNo.style.opacity = 0;
           transform = {
-              translate: { x: 0, y: offsetTop },
+              translate: {
+                x: 0,
+                y: offsetTop
+              },
               angle: 0
           };
           requestElementUpdate();
