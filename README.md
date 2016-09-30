@@ -1,7 +1,8 @@
 Tinder Swipe Cards
 ===================================
 
-Some thing I did for an interview with Tinder back in the day.
+Something I did for an interview with Tinder back in the day.
+Uses AngularJS / HammerJS and a dumb Node.js server for serving dummy data.
 
 Demo link: https://tinder-swipe-cards.herokuapp.com/ 
 
